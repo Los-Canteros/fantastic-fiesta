@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Python') {
             steps {
-                sh 'python --version'
+                withChecks('Testing') {
+                    sh 'python --version'
+                }
             }
         }
     }
