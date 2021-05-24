@@ -8,8 +8,16 @@ pipeline {
     stages {
         stage('Python') {
             steps {
-                withChecks('Testing') {
-                    sh 'python --version'
+                publishChecks detailsURL: 'htpps://rti.com', name: 'Testing', status: 'IN_PROGRESS', title: 'Testing'
+                sh 'python --version'
+            }
+            
+            post {
+                success {
+                    publishChecks detailsURL: 'htpps://rti.com', name: 'Testing', title: 'Testing'
+                }
+                failure {
+                    publishChecks conclusion: 'FAILURE', detailsURL: 'htpps://rti.com', name: 'Testing', title: 'Testing'
                 }
             }
         }
