@@ -8,16 +8,16 @@ pipeline {
     stages {
         stage('Python') {
             steps {
-                publishChecks detailsURL: 'https://rti.com', name: 'Testing', status: 'IN_PROGRESS', title: 'Testing'
+                publishChecks detailsURL: 'https://www.rti.com', name: 'Testing', status: 'IN_PROGRESS', title: 'Testing'
                 sh 'python --version'
             }
             
             post {
                 success {
-                    publishChecks detailsURL: 'https://rti.com', name: 'Testing', title: 'Testing'
+                    publishChecks detailsURL: 'https://www.rti.com', name: 'Testing', title: 'Testing'
                 }
                 failure {
-                    publishChecks conclusion: 'FAILURE', detailsURL: 'https://rti.com', name: 'Testing', title: 'Testing'
+                    publishChecks conclusion: 'FAILURE', detailsURL: 'https://www.rti.com', name: 'Testing', title: 'Testing'
                 }
             }
         }
