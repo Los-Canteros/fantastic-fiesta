@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Python') {
             steps {
-                publishChecks detailsURL: 'https://www.rti.com', name: 'Testing', status: 'IN_PROGRESS', title: 'Testing'
+                publishChecks detailsURL: 'https://community.rti.com', name: 'Testing', status: 'IN_PROGRESS', title: 'Testing'
                 sh 'python --version'
             }
             
