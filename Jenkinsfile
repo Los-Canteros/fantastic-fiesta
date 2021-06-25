@@ -17,7 +17,7 @@ pipeline {
                     publishChecks detailsURL: 'https://www.rti.com', name: 'Testing', title: 'Testing'
                 }
                 failure {
-                    publishChecks conclusion: 'FAILURE', detailsURL: 'https://www.rti.com', name: 'Testing', title: 'Testing'
+                    publishChecks conclusion: 'FAILURE', detailsURL: 'https://community.rti.com', name: 'Testing', title: 'Testing'
                 }
             }
         }
